@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "name": "admin",
+      "email": "admin@example.com",
+      "password": "12345",
+      "role": "user",
+      "id": 1
+    },
+    {
+      "name": "Elias",
+      "email": "elias@example.com",
+      "password": "12345",
+      "role": "user",
+      "id": 2
+    }
+  ],
+  "questions": [
+    {
+      "heading": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, animi.",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt ad tempora quasi accusantium voluptas reprehenderit iusto et. Voluptatem enim tempora eveniet laudantium aperiam inventore vel cupiditate, harum nam deserunt.",
+      "tags": "Java",
+      "id": 1
+    },
+    {
+      "heading": " adipisicing elit. Nulla, animi.",
+      "description": " Asperiores incidunt ad tempora quasi accusantium voluptas reprehenderit iusto et. Voluptatem enim tempora eveniet laudantium aperiam inventore vel cupiditate, harum nam deserunt.",
+      "tags": "Javascript",
+      "id": 2
+    },
+    {
+      "heading": "A question",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut velit exercitationem magnam temporibus distinctio earum!",
+      "tags": "HTML, CSS",
+      "id": 3
+    },
+    {
+      "heading": "Another question",
+      "description": "jchfhqwjlfs",
+      "tags": "ruby",
+      "id": 4
+    }
+  ]
+}

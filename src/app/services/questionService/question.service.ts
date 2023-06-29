@@ -1,0 +1,22 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Question } from 'src/app/Interfaces';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class QuestionService {
+  private apiUrl = 'http://localhost:3000/questions';
+  constructor(private http: HttpClient) { }
+
+  getQuestions(): Observable<Question[]> {
+    return this.http.get<Question[]>(this.apiUrl);
+  }
+
+  getQuestionById(id: number): Observable<Question> {
+  const url = `${this.apiUrl}/${id}`;
+  return this.http.get<Question>(url);
+}
+
+}

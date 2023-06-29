@@ -1,0 +1,42 @@
+<body>
+    <div class="container">
+        <img src="../../../assets/small logo.svg" alt="logo">
+        <div class="login-page">
+            <form action="" [formGroup]="loginForm" (ngSubmit)="login()">
+                <label for="name">Display Name</label>
+                <input type="text" formControlName="name">
+                <div *ngIf="loginForm.controls.name.invalid && loginForm.controls.name.touched" class="error">
+                    Name is required.
+                </div>
+
+
+                <div class="reset-password">
+                    <label for="password">Password</label>
+                    <!-- Forgot Password Modal start -->
+                    <a class=" reset" (click)="openModal()">Reset Password</a>
+                    <!-- modalcontent start -->
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close" (click)="closeModal()">&times;</span>
+                            <h2>Enter your email:</h2>
+                            <div class="input-field">
+                                <input type="email" formControlName="email">
+                            </div>
+                            <button type="button" (click)="resetPassword()">reset</button>
+                        </div>
+                    </div>
+                    <!-- modalcontent end -->
+                    <!-- Forgot Password Modal end -->
+                </div>
+
+                <input type="password" formControlName="password">
+                <div *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched" class="error">
+                    Password is required.
+                </div>
+                
+                <button type="submit">log in</button>
+            </form>
+        </div>
+        <p>Don't have an account? <a routerLink="/register">Register</a></p>
+    </div>
+</body>

@@ -1,0 +1,104 @@
+<body>
+  <div class="container">
+    <div class="allQuestions">
+      <div class="header">
+        <h1>All Questions</h1>
+        <!-- Ask question Modal start -->
+        <button (click)="openModal()">Ask Question</button>
+        <!-- modalcontent start -->
+        <div class="modal">
+          <div class="modal-content">
+            <span class="close" (click)="closeModal()">&times;</span>
+            <form
+              action=""
+              [formGroup]="askQuestionForm"
+              (ngSubmit)="submitQuestion()"
+            >
+              <h2>Ask a Question:</h2>
+              <div class="input-field">
+                <label for="">Question Heading</label>
+                <input type="text" formControlName="heading" />
+                <div
+                  *ngIf="
+                    askQuestionForm.controls.heading.invalid &&
+                    askQuestionForm.controls.heading.touched
+                  "
+                  class="error"
+                >
+                  heading is required.
+                </div>
+              </div>
+
+              <div class="input-field">
+                <label for="">Question Description</label>
+                <textarea
+                  cols="30"
+                  rows="10"
+                  formControlName="description"
+                ></textarea>
+                <div
+                  *ngIf="
+                    askQuestionForm.controls.description.invalid &&
+                    askQuestionForm.controls.description.touched
+                  "
+                  class="error"
+                >
+                  description is required.
+                </div>
+              </div>
+
+              <div class="input-field">
+                <label for="">Tags</label>
+                <input type="text" name="" id="" formControlName="tags" />
+                <div
+                  *ngIf="
+                    askQuestionForm.controls.tags.invalid &&
+                    askQuestionForm.controls.tags.touched
+                  "
+                  class="error"
+                >
+                  tag is required.
+                </div>
+              </div>
+
+              <button type="submit" [disabled]="askQuestionForm.invalid">
+                submit
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- modalcontent end -->
+        <!-- Forgot Password Modal end -->
+      </div>
+      <div class="filter">
+        <p>23,742,333 questions</p>
+        add popup for filter<button>Filter</button>
+      </div>
+    </div>
+
+    <div class="all-content" *ngFor="let question of questions">
+      <div class="votes">
+        <p>0 votes</p>
+        <p>0 answers</p>
+      </div>
+      <div class="question-content" >
+        <div class="content">
+          <a routerLink="/question/{{question.id}}">
+            <p>
+              {{ question.heading }}
+            </p>
+          </a>
+          <p>
+            {{ question.description }}
+          </p>
+        </div>
+        <div class="w">
+          <div class="tag">
+            <a href="">{{ question.tags }}</a>
+          </div>
+          <p><a href="">John Doe</a> asked 1 day ago</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './services/authService/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stack';
+
+
+  constructor(private authService: AuthService) { }
+
+  
+  logout(): void {
+    this.authService.logout();
+  }
 }
