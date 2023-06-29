@@ -10,3 +10,9 @@ export interface Question{
     tags: string[];
     id:number | string
 }
+
+export interface Tag{
+    name:string
+    description: string
+    id: number | string
+}

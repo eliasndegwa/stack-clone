@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { QuestionService } from 'src/app/services/questionService/question.service';
-import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-home',
@@ -19,9 +19,7 @@ export class HomeComponent implements OnInit{
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private toastr: ToastrService,
-    private router: Router,
     private questionService: QuestionService,
-    private location: Location
   ) { }
 
   ngOnInit(): void {

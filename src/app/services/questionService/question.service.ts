@@ -15,8 +15,8 @@ export class QuestionService {
   }
 
   getQuestionById(id: number): Observable<Question> {
-  const url = `${this.apiUrl}/${id}`;
-  return this.http.get<Question>(url);
-}
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Question>(url);
+  }
 
 }
