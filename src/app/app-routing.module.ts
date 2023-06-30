@@ -10,13 +10,13 @@ import { TagsComponent } from './components/tags/tags.component';
 import { SingleQuestionComponent } from './components/single-question/single-question.component';
 
 const routes: Routes = [  //,canActivate: [AuthGuard]
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '',component:LandingComponent },
   { path: 'login', component: LoginComponent },
   {path:'register',component:RegisterComponent},
-  { path: 'tags', component: TagsComponent},
-  { path: 'users', component: UsersComponent},
-  { path: 'question/:id', component: SingleQuestionComponent },
+  { path: 'tags', component: TagsComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
+  { path: 'question/:id', component: SingleQuestionComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
